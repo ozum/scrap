@@ -54,6 +54,7 @@ const init: Script = function init(project: Project, rawArgs: Array<any>, s: Scr
   project.writeFileSync(".env", "");
 
   project.writeFileSync(".env.sample", "# Description\n# VAR='value'\n");
+  project.createSymLinkSync("lib/config/npmignore", ".npmignore");
   project.createSymLinkSync(`lib/config/gitignore/${gitignoreFile}`, ".gitignore");
   project.createSymLinkSync("lib/config/gitattributes", ".gitattributes");
   project.copyFileSync("lib/config/changelog.md", "CHANGELOG.md");

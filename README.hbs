@@ -11,7 +11,14 @@
 
 # Description
 
-Some details
+### tslint.json
+
+`tslint.json` is not a symbolic link. Although it is a "JSON" file, it is extendible. Since `src` would not be available in npm package, it is a real file in
+root. It can be customized by creating a file in project root and adding below:
+
+```json
+{ "extends": "moe-scripts/tslint.json" }
+```
 
 # API
 {{>main~}}
