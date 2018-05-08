@@ -26,7 +26,7 @@
     "watch": "concurrently 'npm run build -- --watch' 'npm run test -- --watch' | awk '{gsub(/\\033c/,\"\") system(\"\")}1'",
     "watch:build": "ts-node build --source-maps --copy-files --out-dir dist --watch",
     "watch:test": "ts-node test --watch",
-    "xpostversion": "git push && git push --tags && npm publish",
+    "postversion": "git push && git push --tags && npm publish",
     "copy": "npm run build && npm pack && mv fortibase-scrap-0.0.3.tgz ../sil/"
   },
   "repository": {
