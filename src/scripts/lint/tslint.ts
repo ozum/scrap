@@ -27,4 +27,4 @@ const script: Script = function script(project: Project, rawArgs: Array<any>, s:
   return project.executeSync(["tslint", [...config, ...args, ...projectArgs]]);
 };
 
-module.exports = { script };
+export { script };

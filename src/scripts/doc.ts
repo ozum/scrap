@@ -1,7 +1,6 @@
 import { Project, Script, ScriptKit } from "script-helper";
 import fs from "fs";
 import path from "path";
-import spawn from "cross-spawn";
 
 const script: Script = function script(project: Project, args: Array<any>, s: ScriptKit) {
   const extension = project.isTypeScript ? "ts" : "js";
@@ -29,4 +28,4 @@ const script: Script = function script(project: Project, args: Array<any>, s: Sc
   );
 };
 
-module.exports = { script };
+export { script };

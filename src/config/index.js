@@ -7,4 +7,4 @@ const getRollupConfig = require("./rollup.config");
 const commitlintConfig = require("./commitlint.config");
 const husky = require("./husky");
 
-export { babel, eslint, jest, lintStaged, prettier, getRollupConfig, commitlintConfig, husky };
+module.exports = { babel, eslint, jest, lintStaged, prettier, getRollupConfig, commitlintConfig, husky };

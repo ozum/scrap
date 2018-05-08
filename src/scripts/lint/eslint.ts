@@ -36,4 +36,4 @@ const script: Script = function script(project: Project, rawArgs: Array<any>, s:
   return project.executeSync(["eslint", [...config, ...ignore, ...cache, ...args, ...filesToApply]]);
 };
 
-module.exports = { script };
+export { script };

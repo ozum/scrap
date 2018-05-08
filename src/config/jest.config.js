@@ -34,4 +34,4 @@ if (project.isTypeScript) {
   jestConfig.transform = { "^.+\\.js$": here("./babel-transform") };
 }
 
-export default jestConfig;
+module.exports = jestConfig;

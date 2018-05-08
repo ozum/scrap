@@ -13,7 +13,7 @@ const preInstall: Script = function preInstall(project: Project, rawArgs: Array<
 
 const init: Script = function init(project: Project, rawArgs: Array<any>, s: ScriptKit) {
   project.resetSync();
-  const gitignoreFile = project.isCompiled ? "compile" : "non-compile";
+  const gitignoreFile = project.isCompiled ? "compiled" : "non-compiled";
   const forceTestScript = project.package.get("scripts.test") && project.package.get("scripts.test").match("no test specified");
   const scripts = {
     // FASTER Bash Only: "f() { P=$1; P=${P/src/lib}; P=${P/.ts/.js}; tsc-watch --onSuccess \"node -r source-map-support/register ${P}\"; }; f";
@@ -30,20 +30,20 @@ const init: Script = function init(project: Project, rawArgs: Array<any>, s: Scr
       : "concurrently 'npm run build -- --watch' 'npm run test -- --watch",
     squash: "BRANCH=`git rev-parse --abbrev-ref HEAD` && git checkout master && git merge --squash $BRANCH && npm run commit",
     release: "git checkout master && git pull origin master && standard-version && git push --follow-tags origin master && npm publish",
-    build: `${project.moduleName} build${project.isTypeScript ? "" : " --source-maps"}`,
+    build: `moe-scripts build${project.isTypeScript ? "" : " --source-maps"}`,
   };
 
   project.package
     .set("scripts.file", scripts.file)
     .set("scripts.watch", scripts.watch)
     .set("scripts.build", scripts.build)
-    .set("scripts.build:doc", `${project.moduleName} doc --no-cache`)
-    .set("scripts.test", `${project.moduleName} test`, { force: forceTestScript })
-    .set("scripts.test:update", `${project.moduleName} test --updateSnapshot`)
-    .set("scripts.lint", `${project.moduleName} lint`)
-    .set("scripts.format", `${project.moduleName} format`)
-    .set("scripts.validate", `${project.moduleName} validate`)
-    .set("scripts.commit", `${project.moduleName} commit`)
+    .set("scripts.build:doc", "moe-scripts doc --no-cache")
+    .set("scripts.test", "moe-scripts test", { force: forceTestScript })
+    .set("scripts.test:update", "moe-scripts test --updateSnapshot")
+    .set("scripts.lint", "moe-scripts lint")
+    .set("scripts.format", "moe-scripts format")
+    .set("scripts.validate", "moe-scripts validate")
+    .set("scripts.commit", "moe-scripts commit")
     .set("scripts.prepublishOnly", "npm run build")
     .set("scripts.squash", scripts.squash)
     .set("scripts.release", scripts.release);
@@ -63,17 +63,17 @@ const init: Script = function init(project: Project, rawArgs: Array<any>, s: Scr
     "README.hbs",
     handlebars.compile(fs.readFileSync(project.fromConfigDir("readme.hbs"), { encoding: "utf8" }))(project.package.data),
   );
-  project.writeFileSync(".prettierrc.js", `module.exports = require("${project.moduleName}/prettier");\n`);
-  project.createSymLinkSync(".prettierignore", ".prettierignore");
-  project.writeFileSync(".huskyrc.js", `module.exports = require("${project.moduleName}/husky");\n`);
-  project.writeFileSync("commitlint.config.js", `module.exports = require("${project.moduleName}/commitlint");\n`);
+  project.writeFileSync(".prettierrc.js", `module.exports = require("moe-scripts/prettier");\n`);
+  project.createSymLinkSync(`lib/config/prettierignore/${project.isCompiled ? "compiled" : "non-compiled"}`, ".prettierignore");
+  project.writeFileSync(".huskyrc.js", `module.exports = require("moe-scripts/husky");\n`);
+  project.writeFileSync("commitlint.config.js", `module.exports = require("moe-scripts/commitlint");\n`);
 
   // lint
   // Create node_modules/module symlink for IDE support and config file if not exists.
   if (project.isTypeScript) {
-    project.writeFileSync("tslint.json", { extends: `${project.moduleName}/tslint.json` }, { serialize: true, format: "json" });
+    project.writeFileSync("tslint.json", { extends: `moe-scripts/tslint.json` }, { serialize: true, format: "json" });
   } else {
-    project.writeFileSync(".eslintrc", { extends: `./node_modules/${project.moduleName}/eslint.js` }, { serialize: true, format: "json" });
+    project.writeFileSync(".eslintrc", { extends: `./node_modules/moe-scripts/eslint.js` }, { serialize: true, format: "json" });
   }
 
   // compiler

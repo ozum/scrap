@@ -1,4 +1,4 @@
 const { Project } = require("script-helper");
 
-const project = new Project({ cwd: `${__dirname}/..`, debug: false });
+const project = new Project();
 module.exports = project;
