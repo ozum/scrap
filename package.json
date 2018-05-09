@@ -115,7 +115,7 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^3.0.0",
-    "script-helper": "^0.6.2",
+    "script-helper": "^0.6.3",
     "sort-keys": "^2.0.0",
     "source-map-support": "^0.5.5",
     "standard-version": "^4.3.0",
