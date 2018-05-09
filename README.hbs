@@ -2,8 +2,6 @@
 
 # TEST
 
-
-
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 <!-- START doctoc -->
@@ -11,14 +9,23 @@
 
 # Description
 
+# Synopsis
+
+```
+> npx moe-scripts build
+```
+
+# Details
+
 ### tslint.json
 
-`tslint.json` is not a symbolic link. Although it is a "JSON" file, it is extendible. Since `src` would not be available in npm package, it is a real file in
-root. It can be customized by creating a file in project root and adding below:
+It is extendible via:
 
 ```json
 { "extends": "moe-scripts/tslint.json" }
 ```
+
+Note: `tslint.json` is not a symbolic link in source root. There is no safe place to link it, because `lib` is not always available in source and `src` is not available in npm package.
 
 # API
 {{>main~}}

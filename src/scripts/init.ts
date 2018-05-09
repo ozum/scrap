@@ -1,5 +1,3 @@
-require("source-map-support").install();
-
 import { Project, replaceArgumentName, Executable, Script, ScriptKit } from "script-helper";
 import fs from "fs-extra";
 import path from "path";
@@ -13,6 +11,7 @@ const preInstall: Script = function preInstall(project: Project, rawArgs: Array<
 
 const init: Script = function init(project: Project, rawArgs: Array<any>, s: ScriptKit) {
   project.resetSync();
+  const BIN = Object.keys(project.package.get("bin"))[0];
   const gitignoreFile = project.isCompiled ? "compiled" : "non-compiled";
   const forceTestScript = project.package.get("scripts.test") && project.package.get("scripts.test").match("no test specified");
   const scripts = {
@@ -30,20 +29,20 @@ const init: Script = function init(project: Project, rawArgs: Array<any>, s: Scr
       : "concurrently 'npm run build -- --watch' 'npm run test -- --watch",
     squash: "BRANCH=`git rev-parse --abbrev-ref HEAD` && git checkout master && git merge --squash $BRANCH && npm run commit",
     release: "git checkout master && git pull origin master && standard-version && git push --follow-tags origin master && npm publish",
-    build: `moe-scripts build${project.isTypeScript ? "" : " --source-maps"}`,
+    build: `${BIN} build${project.isTypeScript ? "" : " --source-maps"}`,
   };
 
   project.package
     .set("scripts.file", scripts.file)
     .set("scripts.watch", scripts.watch)
     .set("scripts.build", scripts.build)
-    .set("scripts.build:doc", "moe-scripts doc --no-cache")
-    .set("scripts.test", "moe-scripts test", { force: forceTestScript })
-    .set("scripts.test:update", "moe-scripts test --updateSnapshot")
-    .set("scripts.lint", "moe-scripts lint")
-    .set("scripts.format", "moe-scripts format")
-    .set("scripts.validate", "moe-scripts validate")
-    .set("scripts.commit", "moe-scripts commit")
+    .set("scripts.build:doc", `${BIN} doc --no-cache`)
+    .set("scripts.test", `${BIN} test`, { force: forceTestScript })
+    .set("scripts.test:update", `${BIN} test --updateSnapshot`)
+    .set("scripts.lint", `${BIN} lint`)
+    .set("scripts.format", `${BIN} format`)
+    .set("scripts.validate", `${BIN} validate`)
+    .set("scripts.commit", `${BIN} commit`)
     .set("scripts.prepublishOnly", "npm run build")
     .set("scripts.squash", scripts.squash)
     .set("scripts.release", scripts.release);
@@ -64,22 +63,21 @@ const init: Script = function init(project: Project, rawArgs: Array<any>, s: Scr
     "README.hbs",
     handlebars.compile(fs.readFileSync(project.fromConfigDir("readme.hbs"), { encoding: "utf8" }))(project.package.data),
   );
-  project.writeFileSync(".prettierrc.js", `module.exports = require("moe-scripts/prettier");\n`);
+  project.writeFileSync(".prettierrc.js", `module.exports = require("${project.name}/prettier");\n`);
   project.createSymLinkSync(`lib/config/prettierignore/${project.isCompiled ? "compiled" : "non-compiled"}`, ".prettierignore");
-  project.writeFileSync(".huskyrc.js", `module.exports = require("moe-scripts/husky");\n`);
-  project.writeFileSync("commitlint.config.js", `module.exports = require("moe-scripts/commitlint");\n`);
+  project.writeFileSync(".huskyrc.js", `module.exports = require("${project.name}/husky");\n`);
+  project.writeFileSync("commitlint.config.js", `module.exports = require("${project.name}/commitlint");\n`);
 
   // lint
-  // Create node_modules/module symlink for IDE support and config file if not exists.
   if (project.isTypeScript) {
-    project.writeFileSync("tslint.json", { extends: `moe-scripts/tslint.json` }, { serialize: true, format: "json" });
+    project.writeFileSync("tslint.json", { extends: `${project.name}/tslint.json` }, { serialize: true, format: "json" });
   } else {
-    project.writeFileSync(".eslintrc", { extends: `./node_modules/moe-scripts/eslint.js` }, { serialize: true, format: "json" });
+    project.writeFileSync(".eslintrc", { extends: `./node_modules/${project.name}/eslint.js` }, { serialize: true, format: "json" });
   }
 
   // compiler
   if (project.isTypeScript) {
-    project.createSymLinkSync("lib/config/tsconfig/backend.json", "tsconfig.json");
+    project.copyFileSync("lib/config/tsconfig/backend.json", "tsconfig.json"); // IDEs such as VSCode fails to detect TypeScript errors if file is sym link.
     project.createSymLinkSync("lib/config/tsconfig/backend-test.json", "tsconfig-test.json");
   }
 

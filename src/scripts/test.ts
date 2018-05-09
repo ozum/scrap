@@ -22,7 +22,7 @@ const script: Script = function script(project: Project, args: Array<any>, s: Sc
       : [];
 
   require("jest").run([...config, ...watch, ...args]);
-  return { status: 0 };
+  return { status: 0, exit: false };
 };
 
 export { script };
