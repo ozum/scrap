@@ -22,7 +22,6 @@ const script: Script = function script(project: Project, args: Array<any>, s: Sc
         return scriptsToRun;
       }, {});
 
-  console.log(scripts);
   return project.executeSync(scripts);
 };
 
