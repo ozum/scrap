@@ -55,9 +55,9 @@ const init: Script = function init(project: Project, rawArgs: Array<any>, s: Scr
   project.createSymLinkSync("lib/config/npmignore", ".npmignore");
   project.createSymLinkSync(`lib/config/gitignore/${gitignoreFile}`, ".gitignore");
   project.createSymLinkSync("lib/config/gitattributes", ".gitattributes");
-  project.copyFileSync("lib/config/changelog.md", "CHANGELOG.md");
+  project.copyFileSync("lib/config/changelog.md", "CHANGELOG.md", { track: false });
   project.copyFileSync("lib/config/editorconfig", ".editorconfig");
-  project.writeFileSync("LICENSE", "");
+  project.writeFileSync("LICENSE", "", { track: false });
   project.writeFileSync(
     "README.hbs",
     handlebars.compile(fs.readFileSync(project.fromConfigDir("readme.hbs"), { encoding: "utf8" }))(project.package.data),
