@@ -1,4 +1,4 @@
-import { Project, replaceArgumentName, Script, ScriptKit } from "script-helper";
+import { Project, replaceArgumentName, Script, ScriptKit } from "@fortibase/scrap2";
 import * as path from "path";
 import fs from "fs-extra";
 

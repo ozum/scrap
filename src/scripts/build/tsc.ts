@@ -1,4 +1,4 @@
-import { Project, replaceArgumentName, Executable, Script, ScriptKit } from "script-helper";
+import { Project, replaceArgumentName, Executable, Script, ScriptKit } from "@fortibase/scrap2";
 import fs from "fs-extra";
 
 const script: Script = function script(project: Project, rawArgs: Array<any>, s: ScriptKit) {

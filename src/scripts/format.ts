@@ -1,4 +1,4 @@
-import { Project, Script, ScriptKit } from "script-helper";
+import { Project, Script, ScriptKit } from "@fortibase/scrap2";
 import path from "path";
 import yargsParser from "yargs-parser";
 

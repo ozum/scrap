@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /// <reference path="../@types/yargs-parser.d.ts" />
 
-import { Project } from "script-helper";
+import { Project } from "@fortibase/scrap2";
 
 // const project = new Project({ cwd: `${__dirname}/..`, debug: false });
 const project: Project = require("./project");

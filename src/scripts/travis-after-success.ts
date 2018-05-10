@@ -1,4 +1,4 @@
-import { Project, Script, ScriptKit } from "script-helper";
+import { Project, Script, ScriptKit } from "@fortibase/scrap2";
 import path from "path";
 
 const script: Script = function script(project: Project, args: Array<any>, s: ScriptKit) {

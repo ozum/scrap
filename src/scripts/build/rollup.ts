@@ -1,4 +1,4 @@
-import { Project, Executable, Script } from "script-helper";
+import { Project, Executable, Script } from "@fortibase/scrap2";
 import path from "path";
 import fs from "fs-extra";
 import glob from "glob";

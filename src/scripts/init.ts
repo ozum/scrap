@@ -1,4 +1,4 @@
-import { Project, replaceArgumentName, Executable, Script, ScriptKit } from "script-helper";
+import { Project, replaceArgumentName, Executable, Script, ScriptKit } from "@fortibase/scrap2";
 import fs from "fs-extra";
 import path from "path";
 import yargsParser from "yargs-parser";
@@ -32,6 +32,8 @@ const init: Script = function init(project: Project, rawArgs: Array<any>, s: Scr
   };
 
   project.package
+    .set("main", "lib/index")
+    .set("bin", project.isCompiled ? ["lib", "bin", "@types"] : ["lib"])
     .set("scripts.file", scripts.file)
     .set("scripts.watch", scripts.watch)
     .set("scripts.build", scripts.build)
