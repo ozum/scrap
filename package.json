@@ -10,8 +10,8 @@
   "scripts": {
     "debug": "ts-node src debug",
     "build": "ts-node src build",
-    "build:doc": "@x/scrap doc --no-cache",
-    "commit": "@x/scrap commit",
+    "build:doc": "ts-node doc --no-cache",
+    "commit": "ts-node src commit",
     "file": "f() { P=$1; P=${P/src/lib}; P=${P/.ts/.js}; tsc-watch --onSuccess \"node -r source-map-support/register ${P}\"; }; f",
     "format": "ts-node src format",
     "lint": "ts-node src lint",
