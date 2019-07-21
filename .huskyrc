@@ -1,0 +1,7 @@
+{
+  "hooks": {
+    "DISABLED -> prepare-commit-msg": "exec < /dev/tty && git cz --hook",
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $GIT_PARAMS"
+  }
+}

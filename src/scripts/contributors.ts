@@ -1,9 +1,0 @@
-import { Project, Script, ScriptKit } from "@fortibase/scrap2";
-
-const spawn = require("cross-spawn");
-
-const script: Script = function script(project: Project, args: Array<any>, s: ScriptKit) {
-  return project.executeSync(["all-contributors", args]);
-};
-
-export { script };
