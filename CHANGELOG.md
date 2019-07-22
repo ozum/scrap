@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.44](https://github.com/ozum/scrap/compare/v0.0.43...v0.0.44) (2019-07-22)
+
+
+### Bug Fixes
+
+* dwdd ([c8f8d35](https://github.com/ozum/scrap/commit/c8f8d35))
+
+
+
 ### [0.0.43](https://github.com/ozum/scrap/compare/v0.0.42...v0.0.43) (2019-07-22)
 
 
