@@ -101,7 +101,7 @@ export default class PackageUtil {
    * Key name to store modifications in `package.json`
    */
   private get modificationsKey(): string {
-    return `${this.intermodular.targetModule.nameWithoutUser}Modifications`;
+    return `${this.intermodular.sourceModule.nameWithoutUser}Modifications`;
   }
 
   /**
