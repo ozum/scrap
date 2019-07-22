@@ -1,4 +1,4 @@
-import Intermodular from "intermodular";
+import Intermodular, { DependencyType } from "intermodular";
 import PackageUtil from "./package-util";
 
 // if (uninstallPackages) {
@@ -9,7 +9,7 @@ export default function uninstall(
   intermodular: Intermodular,
   { savePackage = true, uninstallPackages }: { savePackage?: boolean; uninstallPackages?: boolean } = {}
 ): void {
-  const { targetModule } = intermodular;
+  const { sourceModule, targetModule } = intermodular;
   const packageUtil = new PackageUtil(intermodular);
   const targetPackage = targetModule.getDataFileSync("package.json");
 
@@ -31,7 +31,7 @@ export default function uninstall(
     targetPackage.saveSync();
   }
 
-  if (uninstallPackages) {
+  if (targetModule.hasAnyDependency(sourceModule.name, [DependencyType.DevDependencies]) && uninstallPackages) {
     targetModule.uninstall(packageUtil.addedDependencies.join(" "));
   }
 }

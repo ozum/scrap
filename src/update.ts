@@ -81,7 +81,10 @@ export default function update(intermodular: Intermodular, options: UpdateOption
   });
   targetPackage.saveSync();
 
-  if (!isEqual(targetPackage.get("dependencies"), dependencies) || !isEqual(targetPackage.get("devDependencies"), devDependencies)) {
+  const dependenciesChanged =
+    !isEqual(targetPackage.get("dependencies"), dependencies) || !isEqual(targetPackage.get("devDependencies"), devDependencies);
+
+  if (options.addDependencies && dependenciesChanged) {
     targetModule.install();
   }
 }
