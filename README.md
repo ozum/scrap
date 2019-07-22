@@ -22,7 +22,7 @@ $ npm install -g @fortibase/scrap
 $ scrap COMMAND
 running command...
 $ scrap (-v|--version|version)
-@fortibase/scrap/0.0.38 darwin-x64 node-v12.4.0
+@fortibase/scrap/0.0.39 darwin-x64 node-v12.4.0
 $ scrap --help [COMMAND]
 USAGE
   $ scrap COMMAND
@@ -70,7 +70,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [dist/commands/uninstall.js](https://github.com/ozum/scrap/blob/v0.0.38/dist/commands/uninstall.js)_
+_See code: [dist/commands/uninstall.js](https://github.com/ozum/scrap/blob/v0.0.39/dist/commands/uninstall.js)_
 
 ## `scrap update`
 
@@ -90,5 +90,5 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [dist/commands/update.js](https://github.com/ozum/scrap/blob/v0.0.38/dist/commands/update.js)_
+_See code: [dist/commands/update.js](https://github.com/ozum/scrap/blob/v0.0.39/dist/commands/update.js)_
 <!-- commandsstop -->
