@@ -9,6 +9,10 @@ import { mergeArrayUnique } from "./utils";
 
 interface Modifications {
   /**
+   * Version of the module which made modifications.
+   */
+  version: string;
+  /**
    * Files added to target module physically.
    */
   files: string[];
@@ -240,6 +244,7 @@ export default class PackageUtil {
 
     this.addObjectModification("files", files);
     this.addObjectModification("objectKeys", modifiedKeys);
+    this.modifications.version = this.sourcePackage.get("version");
 
     // Order keys and save
     this.targetPackage.orderKeys(Object.keys(this.keyConditions));

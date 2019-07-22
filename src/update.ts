@@ -6,17 +6,17 @@ import uninstall from "./uninstall";
 
 interface UpdateOptions {
   addDependencies?: boolean;
-  features: string[];
+  features?: string[];
 }
 
-export default function update(addDependencies: boolean, intermodular: Intermodular, options: UpdateOptions): void {
+export default function update(intermodular: Intermodular, options: UpdateOptions): void {
   const { sourceModule, targetModule } = intermodular;
   const packageUtil = new PackageUtil(intermodular);
   const targetPackage = targetModule.getDataFileSync("package.json");
   const addedFiles = [".gitignore"];
   const dependencies = { ...targetPackage.data.dependencies };
   const devDependencies = { ...targetPackage.data.devDependencies };
-  const features = ["common", ...options.features];
+  const features = ["common", ...(options.features || intermodular.targetModule.config.features || [])];
 
   uninstall(intermodular, { savePackage: false, uninstallPackages: false });
 

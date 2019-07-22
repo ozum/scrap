@@ -34,7 +34,7 @@
     "docs:dev": "vuepress dev docs",
     "format": "prettier --write --config .prettierrc --check 'src/**/*.+(js|jsx|json|less|css|ts|tsx|md|vue|gql)'",
     "lint": "eslint --max-warnings=0 --ignore-path .gitignore --cache 'src/**/*.+(js|jsx|ts|tsx|vue)'",
-    "postinstall": "bin/run update -f vuepress",
+    "postinstall": "bin/run update",
     "postpack": "rm -f oclif.manifest.json",
     "postreadme": "oclif-dev readme",
     "prepack": "oclif-dev manifest",
@@ -112,6 +112,11 @@
     "@types/lodash.uniqwith": "^4.5.6",
     "@types/nunjucks": "^3.1.1",
     "cli-ux": "^5.3.1"
+  },
+  "scrap": {
+    "features": [
+      "vuepress"
+    ]
   },
   "oclif": {
     "commands": "./dist/commands",
@@ -201,6 +206,7 @@
         "/module-files",
         "LICENSE"
       ]
-    }
+    },
+    "version": "0.0.38"
   }
 }

@@ -23,9 +23,9 @@ hello world from ./src/hello.ts!
   public async run(): Promise<void> {
     // eslint-disable-next-line no-shadow
     const { flags } = this.parse(Update);
-    update(false, new Intermodular({ overwrite: true }), {
+    update(new Intermodular({ overwrite: true }), {
       addDependencies: flags.addDependencies,
-      features: flags.features ? flags.features.split(",") : [],
+      features: flags.features ? flags.features.split(",") : undefined,
     });
   }
 }
