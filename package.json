@@ -35,7 +35,6 @@
     "format": "prettier --write --config .prettierrc --check 'src/**/*.+(js|jsx|json|less|css|ts|tsx|md|vue|gql)'",
     "lint": "eslint --max-warnings=0 --ignore-path .gitignore --cache 'src/**/*.+(js|jsx|ts|tsx|vue)'",
     "postinstall": "bin/run update",
-    "postuninstall": "bin/run uninstall",
     "postpack": "rm -f oclif.manifest.json",
     "postreadme": "oclif-dev readme",
     "prepack": "oclif-dev manifest",
@@ -115,16 +114,12 @@
     "cli-ux": "^5.3.1"
   },
   "scrap": {
-    "features": [
-      "vuepress"
-    ]
+    "features": ["vuepress"]
   },
   "oclif": {
     "commands": "./dist/commands",
     "bin": "scrap",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
+    "plugins": ["@oclif/plugin-help"]
   },
   "scrapModifications": {
     "files": [
@@ -199,14 +194,7 @@
       "dependencies.vuepress-bar"
     ],
     "arrayKeys": {
-      "files": [
-        "/bin",
-        "/lib/**/!(*.spec|*.test)*.*",
-        "/dist/**/!(*.spec|*.test)*.*",
-        "/@types",
-        "/module-files",
-        "LICENSE"
-      ]
+      "files": ["/bin", "/lib/**/!(*.spec|*.test)*.*", "/dist/**/!(*.spec|*.test)*.*", "/@types", "/module-files", "LICENSE"]
     },
     "version": "0.0.39"
   }
