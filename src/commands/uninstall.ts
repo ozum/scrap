@@ -4,13 +4,9 @@ import { BIN } from "../utils";
 import uninstall from "../uninstall";
 
 export default class Uninstall extends Command {
-  public static description = "Uninstall module project";
+  public static description = "Uninstall files and configuration added previously.";
 
-  public static examples = [
-    `$ ${BIN} uninstall
-hello world from ./src/hello.ts!
-`,
-  ];
+  public static examples = [`$ ${BIN} uninstall`];
 
   public static flags = {
     help: flags.help({ char: "h" }),

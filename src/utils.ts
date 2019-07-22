@@ -1,7 +1,7 @@
 import isEqual from "lodash.isequal";
 import uniqWith from "lodash.uniqwith";
 
-export const BIN = "scrap";
+export const BIN = require("../package.json").name; // eslint-disable-line
 
 /**
  * Merges given array and eliminates duplicate values.
