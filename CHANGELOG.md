@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.50](https://github.com/ozum/scrap/compare/v0.0.49...v0.0.50) (2019-07-23)
+
+
+### Bug Fixes
+
+* some fix ([eba7f15](https://github.com/ozum/scrap/commit/eba7f15))
+
+
+
 ### [0.0.49](https://github.com/ozum/scrap/compare/v0.0.48...v0.0.49) (2019-07-23)
 
 
