@@ -1,10 +1,6 @@
 import Intermodular, { DependencyType } from "intermodular";
 import PackageUtil from "./package-util";
 
-// if (uninstallPackages) {
-//   targetModule.uninstall(this.addedDependencies.join(" "));
-// }
-
 export default function uninstall(
   intermodular: Intermodular,
   { savePackage = true, uninstallPackages }: { savePackage?: boolean; uninstallPackages?: boolean } = {}
