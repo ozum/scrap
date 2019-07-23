@@ -56,7 +56,7 @@ $ npm install -g @fortibase/scrap
 $ scrap COMMAND
 running command...
 $ scrap (-v|--version|version)
-@fortibase/scrap/0.0.45 darwin-x64 node-v12.4.0
+@fortibase/scrap/0.0.46 darwin-x64 node-v12.4.0
 $ scrap --help [COMMAND]
 USAGE
   $ scrap COMMAND
@@ -105,7 +105,7 @@ EXAMPLE
   $ @fortibase/scrap uninstall
 ```
 
-_See code: [dist/commands/uninstall.js](https://github.com/ozum/scrap/blob/v0.0.45/dist/commands/uninstall.js)_
+_See code: [dist/commands/uninstall.js](https://github.com/ozum/scrap/blob/v0.0.46/dist/commands/uninstall.js)_
 
 ## `scrap update`
 
@@ -122,10 +122,10 @@ OPTIONS
 
 EXAMPLES
   $ @fortibase/scrap update
-  @fortibase/scrap update --features buepress
+  $ @fortibase/scrap update --features vuepress
 ```
 
-_See code: [dist/commands/update.js](https://github.com/ozum/scrap/blob/v0.0.45/dist/commands/update.js)_
+_See code: [dist/commands/update.js](https://github.com/ozum/scrap/blob/v0.0.46/dist/commands/update.js)_
 
 <!-- commandsstop -->
 

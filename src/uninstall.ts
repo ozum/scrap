@@ -31,7 +31,13 @@ export default function uninstall(
     targetPackage.saveSync();
   }
 
-  if (targetModule.hasAnyDependency(sourceModule.name, [DependencyType.DevDependencies]) && uninstallPackages) {
+  console.log("<<<<", targetModule.hasAnyDependency(sourceModule.name, [DependencyType.DevDependencies]));
+
+  if (
+    uninstallPackages &&
+    sourceModule.name !== targetModule.name &&
+    targetModule.hasAnyDependency(sourceModule.name, [DependencyType.DevDependencies])
+  ) {
     targetModule.uninstall(packageUtil.addedDependencies.join(" "));
   }
 }

@@ -7,7 +7,7 @@ export default class Update extends Command {
   public static description =
     "Updates node module development environment by adding configuration files installing development dependencies and modifying 'package.json' file.";
 
-  public static examples = [`$ ${BIN} update`, `$ ${BIN} update --features buepress`];
+  public static examples = [`$ ${BIN} update`, `$ ${BIN} update --features vuepress`];
 
   public static flags = {
     help: flags.help({ char: "h" }),
