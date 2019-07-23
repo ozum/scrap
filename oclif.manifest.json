@@ -1,0 +1,35 @@
+{
+  "version": "0.0.52",
+  "commands": {
+    "uninstall": {
+      "id": "uninstall",
+      "description": "Uninstall files and configuration added previously.",
+      "pluginName": "@fortibase/scrap",
+      "pluginType": "core",
+      "aliases": [],
+      "examples": ["$ @fortibase/scrap uninstall"],
+      "flags": { "help": { "name": "help", "type": "boolean", "char": "h", "description": "show CLI help", "allowNo": false } },
+      "args": []
+    },
+    "update": {
+      "id": "update",
+      "description": "Updates node module development environment by adding configuration files installing development dependencies and modifying 'package.json' file.",
+      "pluginName": "@fortibase/scrap",
+      "pluginType": "core",
+      "aliases": [],
+      "examples": ["$ @fortibase/scrap update", "$ @fortibase/scrap update --features vuepress"],
+      "flags": {
+        "help": { "name": "help", "type": "boolean", "char": "h", "description": "show CLI help", "allowNo": false },
+        "addDependencies": {
+          "name": "addDependencies",
+          "type": "boolean",
+          "char": "d",
+          "description": "Add dependencies to 'package.json'",
+          "allowNo": false
+        },
+        "features": { "name": "features", "type": "option", "char": "f", "description": "(CSV) Features to add. ('vuepress')" }
+      },
+      "args": []
+    }
+  }
+}
