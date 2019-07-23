@@ -1,7 +1,7 @@
 {
   "name": "@fortibase/scrap",
   "label": "Fortibase Scrap",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "description": "Keeps node module development environment up to date. Installs config files, development dependencies and modifies your package.json file and keeps them updated.",
   "keywords": [
     "scripts",
