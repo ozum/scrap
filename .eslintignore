@@ -1,7 +1,7 @@
-node_modules/
-coverage/
-dist/
-build/
-out/
-.next/
-.nuxt/
+node_modules
+coverage
+dist
+build
+out
+.next
+.nuxt

@@ -1,5 +1,7 @@
-describe("Some", () => {
-  it("should...", () => {
-    expect(1).toBe(1);
+import { add } from "../src/index";
+
+describe("index", () => {
+  it("should return same number", () => {
+    expect(add(3)).toBe(3);
   });
 });
