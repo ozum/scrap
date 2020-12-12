@@ -30,8 +30,8 @@
   "scripts": {
     "execute": "ts-node --transpile-only --compiler-options '{ \"module\": \"commonjs\" }'",
     "watch": "ts-node-dev --no-notify --respawn --transpile-only --compiler-options '{ \"module\": \"commonjs\" }'",
-    "lint": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue src --fix",
-    "lint:check": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue src",
+    "lint": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue --fix .",
+    "lint:check": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue .",
     "lint:lint-staged": "eslint --ignore-path .gitignore --cache --max-warnings 0 --fix",
     "format": "prettier --config prettier.config.js --ignore-path .eslintignore --write '**/*.+(js|jsx|json|less|css|md|ts|tsx|md|vue|gql|graphql|html|yaml)'",
     "format:check": "prettier --config prettier.config.js --ignore-path .eslintignore --check '**/*.+(js|jsx|json|less|css|md|ts|tsx|md|vue|gql|graphql|html|yaml)'",
@@ -43,7 +43,8 @@
     "build": "tsc --incremental",
     "build:watch": "tsc --watch",
     "prepublish": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "postpublish": "pinst --enable",
+    "generate": "yo @ozum/ts:uninstall --no-install --force && yo @ozum/ts"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.9.1",

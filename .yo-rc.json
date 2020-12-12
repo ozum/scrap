@@ -49,8 +49,9 @@
         "scripts.format": "prettier --config prettier.config.js --ignore-path .eslintignore --write '**/*.+(js|jsx|json|less|css|md|ts|tsx|md|vue|gql|graphql|html|yaml)'",
         "scripts.format:check": "prettier --config prettier.config.js --ignore-path .eslintignore --check '**/*.+(js|jsx|json|less|css|md|ts|tsx|md|vue|gql|graphql|html|yaml)'",
         "scripts.format:lint-staged": "prettier --config prettier.config.js --ignore-path .eslintignore --write",
-        "scripts.lint": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue src --fix",
-        "scripts.lint:check": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue src",
+        "scripts.generate": "yo @ozum/ts:uninstall --no-install --force && yo @ozum/ts",
+        "scripts.lint": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue --fix .",
+        "scripts.lint:check": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue .",
         "scripts.lint:lint-staged": "eslint --ignore-path .gitignore --cache --max-warnings 0 --fix",
         "scripts.postpublish": "pinst --enable",
         "scripts.prepublish": "pinst --disable",
@@ -64,10 +65,10 @@
     },
     "addedFilesSafe": {
       ".eslintrc.js": "661c7c22fbe2a894f22ac1e32568d3faa6f760c3",
-      ".prettier.config.js": "2339672f6e5b8d3aeebe63b98613dca158b8b650",
       "README.njk": "ac6e0bed2bf7000d13fad92b2014cf9e92fce6a8",
       "jest.config.js": "0bd134f06add10c42a03e4b115aef2a323e4b136",
       "lint-staged.config.js": "cbb09ecb17251589a793f69fea1a59c20f82a2c5",
+      "prettier.config.js": "2339672f6e5b8d3aeebe63b98613dca158b8b650",
       "tsconfig.json": "86c1ebbd8975dcf218636f0a737b1bb310c2fd9a"
     },
     "addedFiles": [
@@ -84,9 +85,9 @@
       ".husky/pre-commit",
       ".husky/prepare-commit-msg",
       "module-files/configs/.eslintrc.js",
-      "module-files/configs/.prettier.config.js",
       "module-files/configs/jest.config.js",
       "module-files/configs/lint-staged.config.js",
+      "module-files/configs/prettier.config.js",
       "module-files/configs/tsconfig.json",
       "module-files/template-partials/installation"
     ]
