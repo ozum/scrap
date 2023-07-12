@@ -311,5 +311,8 @@ $RECYCLE.BIN/
 docs/.vuepress/public/api-site
 docs/nav.02.api
 
-# Microbundle cache files
+# Microbunde cache files
 .rts2*
+
+# TurboRepo
+.turbo

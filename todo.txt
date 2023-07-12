@@ -1,0 +1,3 @@
+https://github.com/conventional-changelog/commitlint
+- CI Setup
+- Commitizen tool

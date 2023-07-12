@@ -1,3 +1,3 @@
-export function add(a: number): number {
-  return a;
-}
+import { add } from "./f.js";
+
+export { add };

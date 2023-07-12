@@ -1,0 +1,3 @@
+{
+  "ignore": [" jest.config.js"] // Temp fix for https://github.com/webpro/knip/issues/156
+}

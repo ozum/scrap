@@ -1,32 +1,74 @@
-# @fortibase/scrap
+# array-map-to-object
 
+Like `map()`, but creates object keys and values instead of array. `mapToObject` creates a new object with the returned keys and values of calling a provided function on every element in the calling array.
 
+Published as `.js`, `.mjs`, `umd.js` including type definitions for `TypeScript`.
 
-Keeps node module development environment up to date. Installs config files, development dependencies and modifies your package.json file and keeps them updated.
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
-- [Installation](#installation)
-- [Synopsis](#synopsis)
-- [Details](#details)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
-# Installation
-  
-
-# Synopsis
+# Syntax
 
 ```ts
-
+const newObject = mapToObject(array, (currentValue[, index[, array]]) => {
+  // Return key for object item
+  // or [key, value] tuple (array) for key and value
+  // or { key, value } object for key and value
+}, [, thisArg]);
 ```
 
-# Details
+# Examples
 
-<!-- usage -->
+```ts
+import mapToObject from "array-map-to-object";
+```
 
-<!-- commands -->
+## Using a property for key to create object
 
+```ts
+const users = [
+  { name: "George", basketSize: 3 },
+  { name: "Lisa", basketSize: 2 },
+];
+const usersLookup = mapToObject(users, "name");
+// { George: { name: "George", basketSize: 3 }, Lisa: { name: "Lisa", basketSize: 2 } }
+```
+
+```ts
+const users = [
+  { name: "George", basketSize: 3 },
+  { name: "Lisa", basketSize: 2 },
+];
+const usersLookup = mapToObject(users, (user) => user.name);
+// Callback returns only key, value is same item. `usersLookup` is:
+// { George: { name: "George", basketSize: 3 }, Lisa: { name: "Lisa", basketSize: 2 } }
+```
+
+## Creating custom object using key/value pair.
+
+```ts
+const users = [
+  { name: "George", basketSize: 3 },
+  { name: "Lisa", basketSize: 2 },
+];
+const usersLookup = mapToObject(users, (user) => [user.name, user.basketSize]);
+// Callback returns [key, value] tuple (array). First returned value used for key, second for value. `usersLookup` is:
+// { George: 3, Lisa: 2 }
+```
+
+## Creating custom object using key/value object.
+
+```ts
+const users = [
+  { name: "George", basketSize: 3 },
+  { name: "Lisa", basketSize: 2 },
+];
+const usersLookup = mapToObject(users, (user) => ({ key: user.name, value: user.basketSize }));
+// Callback returns { key, value } object. `usersLookup` is:
+// { George: 3, Lisa: 2 }
+```
+
+## Mapping an array of numbers to an array of square roots
+
+```ts
+const numbers = [1, 4, 9];
+const roots = mapToObject(numbers, (num) => [num, Math.sqrt(num)]);
+// `roots` is { 1: 1, 4: 2, 9: 3 }
+```
