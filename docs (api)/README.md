@@ -1,6 +1,6 @@
-array-map-to-object
+scrap
 
-# array-map-to-object
+# scrap
 
 ## Table of contents
 
@@ -27,4 +27,4 @@ array-map-to-object
 
 #### Defined in
 
-[f.ts:1](https://github.com/ozum/scrap/blob/ca82465/src/f.ts#L1)
+[f.ts:1](https://github.com/ozum/scrap/blob/b71b1d4/src/f.ts#L1)

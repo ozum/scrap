@@ -1,3 +1,4 @@
 {
-  "ignore": ["jest.config.js"] // Temp fix for https://github.com/webpro/knip/issues/156
+  "ignore": ["jest.config.js", "@swc/core"], // Temp fix for https://github.com/webpro/knip/issues/156
+  "ignoreDependencies": ["@swc/core", "@swc/jest"] // Temp fix for https://github.com/webpro/knip/issues/156
 }
