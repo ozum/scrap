@@ -27,4 +27,4 @@ array-map-to-object
 
 #### Defined in
 
-[f.ts:1](https://github.com/ozum/scrap/blob/6ae45ef/src/f.ts#L1)
+[f.ts:1](https://github.com/ozum/scrap/blob/ec3b54c/src/f.ts#L1)
