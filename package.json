@@ -17,7 +17,7 @@
     "build": "tsc",
     "commit": "cz",
     "docs:api": "typedoc",
-    "lint": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue --fix . && knip",
+    "lint": "knip && eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue --fix .",
     "format": "prettier . --write",
     "release": "pnpm docs:api && git pull && git add -A && git commit && git push --follow-tags",
     "test": "jest --coverage",
