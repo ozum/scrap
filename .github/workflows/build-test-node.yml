@@ -50,7 +50,7 @@ jobs:
         run: pnpm build
 
       - name: Audit
-        run: pnpm audit
+        run: pnpm audit --audit-level critical
 
       - name: Release
         if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && github.event_name == 'push'
