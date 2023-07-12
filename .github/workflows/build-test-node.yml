@@ -38,7 +38,7 @@ jobs:
         run: pnpm install
 
       - name: Verify & Build
-        run: concurrently --kill-others-on-fail -g -n '    Audit   ,Dependencies,    Lint    ,   Format   ,    Test    ,    Build   ' -c 'auto' 'pnpm audit --audit-level critical' 'knip' 'pnpm lint --no-fix' 'pnpm format --no-write --check' 'pnpm test' 'pnpm build'
+        run: pnpm exec concurrently --kill-others-on-fail -g -n '    Audit   ,Dependencies,    Lint    ,   Format   ,    Test    ,    Build   ' -c 'auto' 'pnpm audit --audit-level critical' 'knip' 'pnpm lint --no-fix' 'pnpm format --no-write --check' 'pnpm test' 'pnpm build'
 
       # - name: Audit
       #   run: pnpm audit --audit-level critical
