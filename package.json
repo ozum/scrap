@@ -1,5 +1,5 @@
 {
-  "name": "scrap",
+  "name": "ozum/scrap",
   "version": "0.0.0",
   "description": "Creates a new object with the returned keys and values of calling a provided function on every element in the calling array.",
   "main": "dist/index.js",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ozum/array-map-to-object.git"
+    "url": "git+https://github.com/ozum/scrap.git"
   },
   "keywords": [
     "map",
@@ -42,9 +42,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ozum/array-map-to-object/issues"
+    "url": "https://github.com/ozum/scrap/issues"
   },
-  "homepage": "https://github.com/ozum/array-map-to-object#readme",
+  "homepage": "https://github.com/ozum/scrap#readme",
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
