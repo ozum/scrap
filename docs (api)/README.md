@@ -27,4 +27,4 @@ scrap
 
 #### Defined in
 
-[f.ts:1](https://github.com/ozum/scrap/blob/84a221f/src/f.ts#L1)
+[f.ts:1](https://github.com/ozum/scrap/blob/37f0072/src/f.ts#L1)

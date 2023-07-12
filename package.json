@@ -1,6 +1,6 @@
 {
   "name": "scrap",
-  "version": "0.0.13",
+  "version": "0.0.0",
   "description": "Creates a new object with the returned keys and values of calling a provided function on every element in the calling array.",
   "main": "dist/index.js",
   "exports": "./dist/index.js",
@@ -17,8 +17,9 @@
     "build": "tsc",
     "commit": "cz",
     "docs:api": "typedoc",
+    "verify": "concurrently -g -n '    Audit   ,Dependencies,    Lint    ,   Format   ,    Test    ' -c 'auto' 'pnpm audit --audit-level critical' 'knip' 'pnpm lint --no-fix' 'pnpm format --no-write --check' 'pnpm test'",
     "lint": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue --fix .",
-    "format": "prettier . --write",
+    "format": "prettier . --write --ignore-path .gitignore",
     "release": "pnpm docs:api && git pull && git add -A && git commit && git push --follow-tags",
     "test": "jest --coverage",
     "prepare": "is-ci || husky install"
@@ -51,6 +52,7 @@
     "@swc/jest": "^0.2.26",
     "@types/jest": "^29.5.2",
     "commitizen": "^4.3.0",
+    "concurrently": "^8.2.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.44.0",
     "eslint-config-ozum": "^0.0.5",
