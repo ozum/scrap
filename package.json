@@ -1,5 +1,5 @@
 {
-  "name": "ozum/scrap",
+  "name": "@ozum/scrap",
   "version": "0.0.0",
   "description": "Creates a new object with the returned keys and values of calling a provided function on every element in the calling array.",
   "main": "dist/index.js",

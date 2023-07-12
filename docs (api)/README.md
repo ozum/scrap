@@ -1,6 +1,6 @@
-ozum/scrap
+@ozum/scrap
 
-# ozum/scrap
+# @ozum/scrap
 
 ## Table of contents
 
@@ -27,4 +27,4 @@ ozum/scrap
 
 #### Defined in
 
-[f.ts:1](https://github.com/ozum/scrap/blob/1ca31dc/src/f.ts#L1)
+[f.ts:1](https://github.com/ozum/scrap/blob/8572e89/src/f.ts#L1)
