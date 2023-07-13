@@ -40,24 +40,6 @@ jobs:
       - name: Verify & Build
         run: pnpm exec concurrently --kill-others-on-fail -g -n '    Audit   ,Dependencies,    Lint    ,   Format   ,    Test    ,    Build   ' -c 'auto' 'pnpm audit --audit-level critical' 'knip' 'pnpm lint --no-fix' 'pnpm format --no-write --check' 'pnpm test' 'pnpm build'
 
-      # - name: Audit
-      #   run: pnpm audit --audit-level critical
-
-      # - name: Check Dependencies
-      #   run: knip
-
-      # - name: Lint
-      #   run: pnpm lint --no-fix
-
-      # - name: Format
-      #   run: pnpm format --no-write --check
-
-      # - name: Test
-      #   run: pnpm test
-
-      # - name: Build
-      #   run: pnpm build
-
       - name: Release
         if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && github.event_name == 'push'
         env:
