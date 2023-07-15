@@ -1,1 +1,1 @@
-export {add} from "./f.js";
+export { add } from "./f.js";

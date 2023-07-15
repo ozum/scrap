@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[f.ts:1](https://github.com/ozum/scrap/blob/d6edf0c/src/f.ts#L1)
+[f.ts:1](https://github.com/ozum/scrap/blob/938c073/src/f.ts#L1)
