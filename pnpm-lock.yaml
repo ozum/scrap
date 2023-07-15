@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^8.45.0
     version: 8.45.0
   eslint-config-ozum:
-    specifier: ^0.0.7
-    version: 0.0.7(@typescript-eslint/eslint-plugin@6.0.0)(eslint-plugin-import@2.27.5)(eslint-plugin-jest@27.2.3)(eslint-plugin-promise@6.1.1)(eslint-plugin-unicorn@47.0.0)(eslint@8.45.0)(typescript@5.1.6)
+    specifier: ^0.0.8
+    version: 0.0.8(@typescript-eslint/eslint-plugin@6.0.0)(eslint-plugin-import@2.27.5)(eslint-plugin-jest@27.2.3)(eslint-plugin-promise@6.1.1)(eslint-plugin-unicorn@47.0.0)(eslint@8.45.0)(typescript@5.1.6)
   husky:
     specifier: ^8.0.3
     version: 8.0.3
@@ -2455,8 +2455,8 @@ packages:
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@6.0.0)(eslint@8.45.0)
     dev: true
 
-  /eslint-config-ozum@0.0.7(@typescript-eslint/eslint-plugin@6.0.0)(eslint-plugin-import@2.27.5)(eslint-plugin-jest@27.2.3)(eslint-plugin-promise@6.1.1)(eslint-plugin-unicorn@47.0.0)(eslint@8.45.0)(typescript@5.1.6):
-    resolution: { integrity: sha512-7Qu6MbG/I7l1bCwTRUq1UkQ6k4ZXhhDJH65Lmrpn5QI6Jnmu9XQt7xgG1e17VWXjqUz+n2p6X+1BExF71G4qsQ== }
+  /eslint-config-ozum@0.0.8(@typescript-eslint/eslint-plugin@6.0.0)(eslint-plugin-import@2.27.5)(eslint-plugin-jest@27.2.3)(eslint-plugin-promise@6.1.1)(eslint-plugin-unicorn@47.0.0)(eslint@8.45.0)(typescript@5.1.6):
+    resolution: { integrity: sha512-lkdf84fERH+Y2W0ikx5tNyt/Hu729I75zUBBx4bFICikg6LhWwXyz5JPym3EPSEMxpmkKX2bnNcKGfwpquKymg== }
     peerDependencies:
       "@typescript-eslint/eslint-plugin": ^6.0.0
       eslint: ^8.44.0
