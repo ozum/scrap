@@ -38,7 +38,7 @@ jobs:
         run: pnpm install
 
       - name: Verify & Build
-        run: pnpm exec concurrently --kill-others-on-fail -g -n '    Audit   ,Dependencies,    Lint    ,   Format   ,    Test    ,    Build   ' -c 'auto' 'pnpm audit --audit-level critical' 'knip' 'pnpm lint --no-fix' 'pnpm format --no-write --check' 'pnpm test' 'pnpm build'
+        run: pnpm exec concurrently --kill-others-on-fail -g -n '    Audit   ,Dependencies,    Lint    ,   Format   ,    Test    ,    Build   ' -c 'auto' 'pnpm audit --audit-level critical' 'knip' 'pnpm lint --no-fix --no-eslintrc -c ./.eslintrc-maximum.cjs' 'pnpm format --no-write --check' 'pnpm test' 'pnpm build'
 
       - name: Release
         if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && github.event_name == 'push'

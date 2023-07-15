@@ -60,7 +60,10 @@ const users = [
   { name: "George", basketSize: 3 },
   { name: "Lisa", basketSize: 2 },
 ];
-const usersLookup = mapToObject(users, (user) => ({ key: user.name, value: user.basketSize }));
+const usersLookup = mapToObject(users, (user) => ({
+  key: user.name,
+  value: user.basketSize,
+}));
 // Callback returns { key, value } object. `usersLookup` is:
 // { George: 3, Lisa: 2 }
 ```

@@ -12,14 +12,13 @@
 
 ### add
 
-▸ **add**(`a`, `b`): `number`
+▸ **add**(`a`): `number`
 
 #### Parameters
 
 | Name | Type     |
 | :--- | :------- |
 | `a`  | `number` |
-| `b`  | `number` |
 
 #### Returns
 
@@ -27,4 +26,4 @@
 
 #### Defined in
 
-[f.ts:1](https://github.com/ozum/scrap/blob/8896e57/src/f.ts#L1)
+[f.ts:1](https://github.com/ozum/scrap/blob/d6edf0c/src/f.ts#L1)

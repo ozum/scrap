@@ -18,12 +18,12 @@
     "prettier.config.cjs"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "commit": "cz",
     "docs:api": "typedoc",
     "verify": "concurrently -g -n '    Audit   ,Dependencies,    Lint    ,   Format   ,    Test    ' -c 'auto' 'pnpm audit --audit-level critical' 'knip' 'pnpm lint' 'pnpm format' 'pnpm test'",
     "lint": "eslint --ignore-path .gitignore --cache --max-warnings 0 --ext js,jsx,ts,tsx,vue --fix .",
-    "format": "prettier . --write --ignore-path .gitignore",
+    "format": "prettier . --list-different --write --ignore-path .gitignore",
     "release": "pnpm docs:api && git pull && git add -A && git commit && git push --follow-tags",
     "test": "jest --coverage",
     "prepare": "is-ci || husky install"
@@ -59,13 +59,13 @@
     "concurrently": "^8.2.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.44.0",
-    "eslint-config-ozum": "^0.0.5",
+    "eslint-config-ozum": "^0.0.7",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
     "jest": "^29.6.1",
     "knip": "^2.15.4",
     "lint-staged": "^13.2.3",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "typedoc": "^0.24.8",
     "typedoc-plugin-markdown": "^3.15.3",
     "typescript": "^5.1.6"
