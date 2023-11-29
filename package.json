@@ -1,6 +1,6 @@
 {
   "name": "@ozum/scrap",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Creates a new object with the returned keys and values of calling a provided function on every element in the calling array.",
   "main": "dist/index.js",
   "exports": ".",
@@ -50,6 +50,7 @@
   },
   "homepage": "https://github.com/ozum/scrap#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
     "@swc/core": "^1.3.69",
