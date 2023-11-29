@@ -16,9 +16,9 @@
 
 #### Parameters
 
-| Name | Type     |
-| :--- | :------- |
-| `a`  | `number` |
+| Name | Type |
+| :------ | :------ |
+| `a` | `number` |
 
 #### Returns
 
@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[f.ts:1](https://github.com/ozum/scrap/blob/64a6836/src/f.ts#L1)
+[f.ts:1](https://github.com/ozum/scrap/blob/09fab3a/src/f.ts#L1)
